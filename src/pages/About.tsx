@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
-import { useState, useEffect } from 'react';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -10,8 +9,9 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
-import { Briefcase, Code, GraduationCap, Award, Terminal } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Award, Briefcase, Code, GraduationCap, Terminal } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function AboutPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -47,7 +47,7 @@ export default function AboutPage() {
           >
             {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <AnimatedGradientText>Hakkımda</AnimatedGradientText>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -67,7 +67,7 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold mb-2">Mehmet Yazılımcı</h2>
+                  <h2 className="text-xl font-bold mb-2">Hasan UÇKUN</h2>
                   <p className="text-muted-foreground mb-4">Kıdemli Yazılım Mühendisi</p>
                   
                   <div className="space-y-2 mb-6">
@@ -81,7 +81,7 @@ export default function AboutPage() {
                     </div>
                     <div className="flex items-center">
                       <GraduationCap className="w-4 h-4 mr-2 text-primary" />
-                      <span>Bilgisayar Mühendisliği, MTÜ</span>
+                      <span>Yazılım Mühendisliği, FU</span>
                     </div>
                   </div>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
 
                 <motion.div variants={itemVariants}>
                   <Tabs defaultValue="experience" className="w-full">
-                    <TabsList className="mb-8 bg-black/20">
+                    <TabsList className="mb-8 bg-black/5">
                       <TabsTrigger value="experience" className="flex items-center">
                         <Briefcase className="mr-2 h-4 w-4" />
                         <span>Deneyim</span>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                     </TabsList>
                     
                     <TabsContent value="experience" className="space-y-4">
-                      <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                      <Card className="border-gray-300 bg-black/5  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                         <CardContent className="pt-6">
                           <div className="flex justify-between mb-2">
                             <h3 className="text-lg font-bold">Kıdemli Yazılım Mühendisi</h3>
@@ -149,7 +149,7 @@ export default function AboutPage() {
                         </CardContent>
                       </Card>
 
-                      <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                      <Card className="border-gray-300 bg-black/5  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                         <CardContent className="pt-6">
                           <div className="flex justify-between mb-2">
                             <h3 className="text-lg font-bold">Yazılım Mühendisi</h3>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                         </CardContent>
                       </Card>
 
-                      <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                      <Card className="border-gray-300 bg-black/5  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                         <CardContent className="pt-6">
                           <div className="flex justify-between mb-2">
                             <h3 className="text-lg font-bold">Junior Geliştirici</h3>
@@ -179,7 +179,7 @@ export default function AboutPage() {
                     </TabsContent>
                     
                     <TabsContent value="education" className="space-y-4">
-                      <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                      <Card className="border-gray-300 bg-black/5  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                         <CardContent className="pt-6">
                           <div className="flex justify-between mb-2">
                             <h3 className="text-lg font-bold">Bilgisayar Mühendisliği Yüksek Lisansı</h3>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                         </CardContent>
                       </Card>
 
-                      <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                      <Card className="border-gray-300 bg-black/5  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                         <CardContent className="pt-6">
                           <div className="flex justify-between mb-2">
                             <h3 className="text-lg font-bold">Bilgisayar Mühendisliği Lisansı</h3>
@@ -210,74 +210,74 @@ export default function AboutPage() {
                     
                     <TabsContent value="skills">
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Frontend</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">React</Badge>
-                              <Badge variant="secondary">TypeScript</Badge>
-                              <Badge variant="secondary">Next.js</Badge>
-                              <Badge variant="secondary">Tailwind</Badge>
+                              <Badge className='bg-blue-600' >React</Badge>
+                              <Badge className='bg-blue-600' >TypeScript</Badge>
+                              <Badge className='bg-blue-600' >Next.js</Badge>
+                              <Badge className='bg-blue-600' >Tailwind</Badge>
                             </div>
                           </CardContent>
                         </Card>
                         
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Backend</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">Node.js</Badge>
-                              <Badge variant="secondary">Python</Badge>
-                              <Badge variant="secondary">Go</Badge>
-                              <Badge variant="secondary">GraphQL</Badge>
+                              <Badge className='bg-blue-600' >Node.js</Badge>
+                              <Badge className='bg-blue-600' >Python</Badge>
+                              <Badge className='bg-blue-600' >Go</Badge>
+                              <Badge className='bg-blue-600' >GraphQL</Badge>
                             </div>
                           </CardContent>
                         </Card>
                         
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Veritabanı</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">PostgreSQL</Badge>
-                              <Badge variant="secondary">MongoDB</Badge>
-                              <Badge variant="secondary">Redis</Badge>
-                              <Badge variant="secondary">Elasticsearch</Badge>
+                              <Badge className='bg-blue-600' >PostgreSQL</Badge>
+                              <Badge className='bg-blue-600' >MongoDB</Badge>
+                              <Badge className='bg-blue-600' >Redis</Badge>
+                              <Badge className='bg-blue-600' >Elasticsearch</Badge>
                             </div>
                           </CardContent>
                         </Card>
                         
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">DevOps</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">Docker</Badge>
-                              <Badge variant="secondary">Kubernetes</Badge>
-                              <Badge variant="secondary">AWS</Badge>
-                              <Badge variant="secondary">CI/CD</Badge>
+                              <Badge className='bg-blue-600' >Docker</Badge>
+                              <Badge className='bg-blue-600' >Kubernetes</Badge>
+                              <Badge className='bg-blue-600' >AWS</Badge>
+                              <Badge className='bg-blue-600' >CI/CD</Badge>
                             </div>
                           </CardContent>
                         </Card>
                         
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Mimari</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">Mikroservisler</Badge>
-                              <Badge variant="secondary">REST API</Badge>
-                              <Badge variant="secondary">Serverless</Badge>
-                              <Badge variant="secondary">Event-driven</Badge>
+                              <Badge className='bg-blue-600' >Mikroservisler</Badge>
+                              <Badge className='bg-blue-600' >REST API</Badge>
+                              <Badge className='bg-blue-600' >Serverless</Badge>
+                              <Badge className='bg-blue-600' >Event-driven</Badge>
                             </div>
                           </CardContent>
                         </Card>
                         
-                        <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                        <Card className="border-gray-800 bg-black/5 border-gray-200  hover:bg-blue-400/10 transition-all duration-300 hover:border-blue-400 hover:text-primary">
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Diğer</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge variant="secondary">Agile/Scrum</Badge>
-                              <Badge variant="secondary">Git</Badge>
-                              <Badge variant="secondary">TDD</Badge>
-                              <Badge variant="secondary">UI/UX</Badge>
+                              <Badge className='bg-blue-600' >Agile/Scrum</Badge>
+                              <Badge className='bg-blue-600' >Git</Badge>
+                              <Badge className='bg-blue-600' >TDD</Badge>
+                              <Badge className='bg-blue-600' >UI/UX</Badge>
                             </div>
                           </CardContent>
                         </Card>
@@ -295,7 +295,7 @@ export default function AboutPage() {
                   </h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                    <Card className="border-gray-300 bg-black/5 backdrop-blur-sm">
                       <CardContent className="p-6">
                         <h3 className="font-bold text-lg mb-1">AWS Çözüm Mimarı</h3>
                         <p className="text-primary text-sm mb-2">Amazon Web Services, 2022</p>
@@ -305,7 +305,7 @@ export default function AboutPage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                    <Card className="border-gray-300 bg-black/5 backdrop-blur-sm">
                       <CardContent className="p-6">
                         <h3 className="font-bold text-lg mb-1">Google Cloud Profesyonel Mühendis</h3>
                         <p className="text-primary text-sm mb-2">Google Cloud Platform, 2021</p>
@@ -315,7 +315,7 @@ export default function AboutPage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                    <Card className="border-gray-300 bg-black/5 backdrop-blur-sm">
                       <CardContent className="p-6">
                         <h3 className="font-bold text-lg mb-1">Tensorflow Geliştirici Sertifikası</h3>
                         <p className="text-primary text-sm mb-2">Google, 2020</p>
@@ -325,7 +325,7 @@ export default function AboutPage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="border-gray-800 bg-black/20 backdrop-blur-sm">
+                    <Card className="border-gray-300 bg-black/5 backdrop-blur-sm">
                       <CardContent className="p-6">
                         <h3 className="font-bold text-lg mb-1">Yılın Geliştiricisi Ödülü</h3>
                         <p className="text-primary text-sm mb-2">TechFuture Inc., 2021</p>

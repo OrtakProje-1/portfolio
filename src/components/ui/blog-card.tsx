@@ -1,6 +1,5 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +24,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   const { id, title, excerpt, date, readTime, category } = post;
   
   return (
-    <Card className="h-full overflow-hidden bg-black/30 backdrop-blur-md border-gray-800 hover:border-gray-700 transition-all duration-300">
+    <Card className="h-full overflow-hidden bg-transparent backdrop-blur-md border-gray-200 shadow-md shadow-grey-500/10 hover:shadow-blue-500/0 hover:text-primary hover:border-primary hover:bg-blue-400/10 transition-all duration-300">
       <Link to={`/blog/${id}`} className="flex flex-col h-full">
         <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -38,7 +37,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             <Badge className="mb-3 bg-gradient-to-r from-blue-600 to-indigo-600">
               {category}
             </Badge>
-            <h3 className="text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
+            <h3 className="text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-all duration-0">
               {title}
             </h3>
             <p className="text-muted-foreground text-sm line-clamp-3">

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ui/theme-toggle';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
-import useMobile from '@/hooks/use-mobile';
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   { name: 'Ana Sayfa', href: '/' },
@@ -16,7 +16,7 @@ const navItems = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +32,7 @@ export default function Header() {
       className={cn(
         'fixed top-0 w-full z-40 transition-all duration-200',
         scrolled
-          ? 'bg-black/60 backdrop-blur-lg border-b border-gray-800'
+          ? 'bg-black/0 backdrop-blur-lg'
           : 'bg-transparent'
       )}
     >
@@ -92,7 +92,7 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden">
-          <div className="bg-black/80 backdrop-blur-lg border-b border-gray-800">
+          <div className="bg-black/15 backdrop-blur-lg border-b border-gray-300 m-2 rounded-sm">
             <div className="container mx-auto px-4 pt-2 pb-4">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (

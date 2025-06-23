@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import ProjectCard from '@/components/ui/project-card';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import { projects } from '@/data/projects';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import ProjectCard from '@/components/ui/project-card';
+import { projects } from '@/data/projects';
+import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function ProjectsPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     placeholder="Projelerde ara..."
-                    className="pl-10 bg-black/20 border-gray-800"
+                    className="pl-10 bg-black/5 border-gray-300 text-white"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
@@ -96,8 +96,8 @@ export default function ProjectsPage() {
                   {allTags.map(tag => (
                     <Badge
                       key={tag}
-                      variant={selectedTags.includes(tag) ? "default" : "outline"}
-                      className={`cursor-pointer hover:bg-primary/20 ${
+                      variant={selectedTags.includes(tag) ? "destructive" : "outline"}
+                      className={`cursor-pointer hover:bg-primary/100 hover:text-white ${
                         selectedTags.includes(tag) 
                           ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700" 
                           : ""

@@ -1,8 +1,7 @@
-import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { TypeAnimation } from 'react-type-animation';
 import AnimatedGradientText from './animated-gradient-text';
 
 export default function HeroSection() {
@@ -29,9 +28,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="mb-6 inline-flex items-center rounded-full border border-gray-800 bg-black/20 px-3 py-1 text-sm backdrop-blur">
-            <span className="mr-1 animate-pulse rounded-full bg-green-500 h-2 w-2" />
-            <span className="text-gray-300">
+          <div className="mb-6 inline-flex items-center rounded-full border border-gray-200 bg-black/5 px-3 py-1 text-sm backdrop-blur">
+            <span className="mr-2 animate-pulse rounded-full bg-green-600 h-2 w-2" />
+            <span className="text-gray-600">
               Yazılım mühendisi & Teknoloji tutkunu
             </span>
           </div>
@@ -43,7 +42,7 @@ export default function HeroSection() {
             className="text-4xl font-bold tracking-tight sm:text-6xl mb-6"
           >
             <AnimatedGradientText>
-              Merhaba, ben Mehmet
+              Merhaba, ben Hasan
             </AnimatedGradientText>
           </motion.h1>
 
@@ -55,6 +54,10 @@ export default function HeroSection() {
           >
             <TypeAnimation
               sequence={[
+                'Yazılım Mühendisi',
+                1000,
+                'Mobil Geliştirici',
+                1000,
                 'Full-Stack Geliştirici',
                 1000,
                 'UI/UX Tasarımcısı',
@@ -63,6 +66,7 @@ export default function HeroSection() {
                 1000,
                 'Açık Kaynak Katkıcısı',
                 1000,
+
               ]}
               wrapper="div"
               cursor={true}

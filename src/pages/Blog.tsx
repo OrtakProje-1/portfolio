@@ -1,13 +1,9 @@
-import { motion } from 'react';
-import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import BlogCard from '@/components/ui/blog-card';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import { blogPosts } from '@/data/blog-posts';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Search, Filter, X } from 'lucide-react';
+import BlogCard from '@/components/ui/blog-card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
@@ -15,11 +11,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { blogPosts } from '@/data/blog-posts';
+import { motion } from 'framer-motion';
+import { Filter, Search, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function BlogPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('newest');
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function BlogPage() {
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
         
-      const matchesCategory = selectedCategory === '' || post.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
         
       return matchesSearch && matchesCategory;
     })
@@ -55,7 +55,7 @@ export default function BlogPage() {
 
   const clearFilters = () => {
     setSearchQuery('');
-    setSelectedCategory('');
+    setSelectedCategory('all');
     setSortBy('newest');
   };
 
@@ -86,7 +86,7 @@ export default function BlogPage() {
           >
             {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <AnimatedGradientText>Blog</AnimatedGradientText>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -96,12 +96,12 @@ export default function BlogPage() {
 
             {/* Search and Filter */}
             <motion.div variants={itemVariants} className="mb-12">
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between ">
                 <div className="relative w-full md:max-w-md">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     placeholder="Blog yazılarında ara..."
-                    className="pl-10 bg-black/20 border-gray-800"
+                    className="pl-10 bg-black/5 border-black/20"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
@@ -109,16 +109,16 @@ export default function BlogPage() {
                 
                 <div className="flex flex-wrap gap-3 items-center justify-start md:justify-end w-full md:w-auto">
                   <div className="flex items-center space-x-2">
-                    <Filter className="h-4 w-4 text-muted-foreground" />
+                    <Filter className="h-6 w-6 text-muted-foreground mr-2"  />
                     <Select
                       value={selectedCategory}
                       onValueChange={setSelectedCategory}
                     >
-                      <SelectTrigger className="w-[180px] bg-black/20 border-gray-800">
+                      <SelectTrigger className="w-[180px] bg-black/5 border-black/20">
                         <SelectValue placeholder="Kategori" />
                       </SelectTrigger>
-                      <SelectContent className="bg-zinc-900 border-gray-800">
-                        <SelectItem value="">Tüm Kategoriler</SelectItem>
+                      <SelectContent className="bg-black/10 backdrop-blur-md border-black/20">
+                        <SelectItem value="all">Tüm Kategoriler</SelectItem>
                         {allCategories.map(category => (
                           <SelectItem key={category} value={category}>
                             {category}
@@ -130,10 +130,10 @@ export default function BlogPage() {
                   
                   <div className="flex items-center space-x-2">
                     <Select value={sortBy} onValueChange={setSortBy}>
-                      <SelectTrigger className="w-[180px] bg-black/20 border-gray-800">
+                      <SelectTrigger className="w-[180px] bg-black/5 border-black/20">
                         <SelectValue placeholder="Sıralama" />
                       </SelectTrigger>
-                      <SelectContent className="bg-zinc-900 border-gray-800">
+                      <SelectContent className="bg-black/10 backdrop-blur-md border-black/20 ">
                         <SelectItem value="newest">En Yeni</SelectItem>
                         <SelectItem value="oldest">En Eski</SelectItem>
                         <SelectItem value="popular">En Popüler</SelectItem>
@@ -141,7 +141,7 @@ export default function BlogPage() {
                     </Select>
                   </div>
                   
-                  {(searchQuery || selectedCategory || sortBy !== 'newest') && (
+                  {(searchQuery || selectedCategory !== 'all' || sortBy !== 'newest') && (
                     <Button 
                       variant="ghost" 
                       size="sm" 
@@ -157,9 +157,9 @@ export default function BlogPage() {
             </motion.div>
 
             {/* Featured Post */}
-            {searchQuery === '' && selectedCategory === '' && sortBy === 'newest' && (
+            {blogPosts.length > 0 && searchQuery === '' && selectedCategory === 'all' && sortBy === 'newest' && (
               <motion.div variants={itemVariants} className="mb-12">
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 aspect-[21/9]">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 aspect-[21/9]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-6 md:p-10 w-full md:w-3/4">
                     <Badge className="mb-4 bg-blue-500 hover:bg-blue-600">
@@ -193,7 +193,7 @@ export default function BlogPage() {
             {/* Blog Posts Grid */}
             <motion.div variants={itemVariants}>
               {filteredBlogPosts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
                   {filteredBlogPosts.map((post, index) => (
                     <motion.div
                       key={post.id}
@@ -229,7 +229,7 @@ export default function BlogPage() {
                     <Input 
                       type="email" 
                       placeholder="E-posta adresin" 
-                      className="bg-black/30 border-gray-700"
+                      className="bg-white/50 border-gray-700 "
                     />
                     <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                       Abone Ol

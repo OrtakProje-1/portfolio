@@ -1,9 +1,8 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import { ExternalLink, Eye, Github } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -25,7 +24,7 @@ export default function ProjectCard({ project, showTags = false }: ProjectCardPr
   const { title, description, tags, image, demoUrl, githubUrl } = project;
   
   return (
-    <Card className="h-full overflow-hidden bg-black/30 backdrop-blur-md border-gray-800 group hover:border-gray-700 transition-all duration-300">
+    <Card className="h-full overflow-hidden bg-black/5 backdrop-blur-md border-gray-200 group hover:border-blue-400 transition-all duration-300">
       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
         <motion.div 
           className="absolute inset-0 flex items-center justify-center text-4xl"

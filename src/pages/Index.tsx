@@ -1,15 +1,15 @@
-import { motion } from 'framer-motion';
-import HeroSection from '@/components/ui/hero-section';
-import ProjectCard from '@/components/ui/project-card';
+import MainLayout from '@/components/layout/MainLayout';
+import AnimatedGradientText from '@/components/ui/animated-gradient-text';
 import BlogCard from '@/components/ui/blog-card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import MainLayout from '@/components/layout/MainLayout';
-import { useState, useEffect } from 'react';
-import { featuredProjects } from '@/data/projects';
+import HeroSection from '@/components/ui/hero-section';
+import ProjectCard from '@/components/ui/project-card';
 import { featuredPosts } from '@/data/blog-posts';
+import { featuredProjects } from '@/data/projects';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedGradientText from '@/components/ui/animated-gradient-text';
 
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -60,7 +60,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={isLoaded ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="py-20 px-4 bg-black/30 backdrop-blur"
+        className="py-20 px-4 bg-black/5 backdrop-blur"
       >
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
