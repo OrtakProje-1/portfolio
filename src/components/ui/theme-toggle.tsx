@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Moon, Sun } from 'iconsax-reactjs';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -28,9 +28,9 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
       {theme === 'dark' ? (
-        <Sun className="h-5 w-5 text-yellow-300" />
+        <Sun size="24" className="text-primary" variant="Bold" />
       ) : (
-        <Moon className="h-5 w-5" />
+        <Moon size="24" className="text-primary" variant="Bold" />
       )}
     </Button>
   );

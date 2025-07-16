@@ -1,6 +1,11 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme{
+  --color-mint-500:oklch(0.72 0.11 255)
+}
 
 @layer base {
   :root {
@@ -61,6 +66,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+
 
 /* Custom Styles */
 .animate-gradient-x {
@@ -157,3 +164,25 @@
   margin-bottom: 1.5em;
   color: rgba(255, 255, 255, 0.7);
 }
+
+.custom-gradient-image {
+  width: 8vw;
+  height: 8vw;
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 50px;
+  min-height: 50px;
+  background: linear-gradient(to right, #3c43d5, #00ccff);
+  -webkit-mask-image: url("/logo.png");
+  mask-image: url("/logo.png");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  aspect-ratio: 1 / 1;
+}
+
+
+

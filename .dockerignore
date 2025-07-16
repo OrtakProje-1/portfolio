@@ -1,0 +1,30 @@
+# node_modules klasörünü dışla (build aşamasında yeniden yüklenir)
+node_modules
+dist
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# IDE/editor ayarları
+.vscode
+.idea
+
+# Log dosyaları
+*.log
+
+# Docker dosyasının kendisi hariç diğer configler
+Dockerfile.*
+docker-compose.*
+
+# Test ve örnek dosyalar (eğer varsa)
+*.test.*
+*.spec.*
+
+# Çıkış dosyaları
+*.zip
+*.tar

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-black/5 backdrop-blur-lg mt-auto">
+    <footer className="border-t border-black mt-auto">
+       
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
@@ -13,7 +14,7 @@ export default function Footer() {
               to="/"
               className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent inline-block mb-4"
             >
-              DevPortal
+              Hasan UÇKUN
             </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
               Yazılım mühendisliği ve teknoloji konularında paylaşımlar yapan kişisel
@@ -22,12 +23,12 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/OrtakProje-1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://tr.linkedin.com/in/hasan-u%C3%A7kun-550a62229" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
@@ -37,7 +38,7 @@ export default function Footer() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="mailto:contact@example.com" aria-label="Email">
+                <a href="mailto:hasanuk98@gmail.com" aria-label="Email">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>
@@ -76,16 +77,16 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">İletişim</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                <a href="mailto:contact@example.com" className="hover:text-primary transition-colors">
-                  contact@example.com
+                <a href="mailto:hasanuk98@gmail.com" className="hover:text-primary transition-colors">
+                  hasanuk98@gmail.com
                 </a>
               </li>
               <li className="text-muted-foreground hover:text-primary">
-                <a href="tel:+901234567890" className="hover:text-primary transition-colors">
-                  +90 (123) 456-7890
+                <a href="tel:+905522434109" className="hover:text-primary transition-colors">
+                  +90 (552) 243-4109
                 </a>
               </li>
-              <li className="text-muted-foreground">İstanbul, Türkiye</li>
+              <li className="text-muted-foreground">Ankara, Türkiye</li>
               <li className="pt-2">
                 <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                   İletişime Geç
@@ -96,7 +97,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} DevPortal. Tüm hakları saklıdır.</p>
+          <p>&copy; {new Date().getFullYear()} Hasan UÇKUN. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

@@ -1,15 +1,15 @@
-import MainLayout from '@/components/layout/MainLayout';
-import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import BlogCard from '@/components/ui/blog-card';
-import { Button } from '@/components/ui/button';
-import HeroSection from '@/components/ui/hero-section';
-import ProjectCard from '@/components/ui/project-card';
-import { featuredPosts } from '@/data/blog-posts';
-import { featuredProjects } from '@/data/projects';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import MainLayout from "@/components/layout/MainLayout";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import BlogCard from "@/components/ui/blog-card";
+import { Button } from "@/components/ui/button";
+import HeroSection from "@/components/ui/hero-section";
+import ProjectCard from "@/components/ui/project-card";
+import { featuredPosts } from "@/data/blog-posts";
+import { featuredProjects } from "@/data/projects";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,6 +21,7 @@ export default function HomePage() {
   return (
     <MainLayout>
       <HeroSection />
+    
 
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -29,6 +30,7 @@ export default function HomePage() {
         className="py-20 px-4"
       >
         <div className="container mx-auto">
+          
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
             <h2 className="text-3xl font-bold mb-4 md:mb-0">
               <AnimatedGradientText>Öne Çıkan Projeler</AnimatedGradientText>
@@ -60,7 +62,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={isLoaded ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="py-20 px-4 bg-black/5 backdrop-blur"
+        className="py-20 px-4"
       >
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
@@ -102,14 +104,20 @@ export default function HomePage() {
               <AnimatedGradientText>İletişime Geçin</AnimatedGradientText>
             </h2>
             <p className="text-muted-foreground max-w-2xl mb-8">
-              Proje fikirlerinizi hayata geçirmek, yazılım geliştirme süreçleri hakkında konuşmak veya sadece merhaba demek için benimle iletişime geçin.
+              Proje fikirlerinizi hayata geçirmek, yazılım geliştirme süreçleri
+              hakkında konuşmak veya sadece merhaba demek için benimle iletişime
+              geçin.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+            >
               <a href="mailto:contact@devportal.com">E-posta Gönder</a>
             </Button>
           </div>
         </div>
       </motion.section>
+      
     </MainLayout>
   );
 }

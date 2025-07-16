@@ -2,7 +2,8 @@ import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ui/theme-toggle';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { HamburgerMenu, Menu } from "iconsax-reactjs";
+import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -37,11 +38,13 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
+     
         <Link
           to="/"
-          className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          className=""
         >
-          DevPortal
+            <div className="custom-gradient-image"/>
+          
         </Link>
 
         {/* Desktop navigation */}
@@ -63,7 +66,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
             İletişim
           </Button>
@@ -73,7 +76,14 @@ export default function Header() {
         {isMobile && (
           <div className="flex items-center md:hidden gap-2">
             <ThemeToggle />
-            <Button
+            <HamburgerMenu size="24" className="text-primary" variant="Bold" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </HamburgerMenu>
+            {/* <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -84,7 +94,7 @@ export default function Header() {
               ) : (
                 <Menu className="h-6 w-6" />
               )}
-            </Button>
+            </Button> */}
           </div>
         )}
       </div>

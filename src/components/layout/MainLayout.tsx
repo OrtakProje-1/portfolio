@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import React, { ReactNode } from "react";
+import Footer from "./Footer";
+import Header from "./Header";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -10,6 +10,7 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
+   
       <Header />
       <motion.main
         initial={{ opacity: 0 }}

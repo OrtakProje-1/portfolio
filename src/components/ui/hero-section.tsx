@@ -71,7 +71,7 @@ export default function HeroSection() {
               wrapper="div"
               cursor={true}
               repeat={Infinity}
-              className="text-gray-100"
+              className="text-gray-100 text-shadow-lg"
             />
           </motion.div>
 
