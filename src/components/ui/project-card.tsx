@@ -24,7 +24,7 @@ export default function ProjectCard({ project, showTags = false }: ProjectCardPr
   const { title, description, tags, image, demoUrl, githubUrl } = project;
 
   return (
-    <Card className="h-full overflow-hidden  backdrop-blur-md border-gray-200 group hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300">
+    <Card className="h-full overflow-hidden fade-in backdrop-blur-md border-gray-200 group hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300">
       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
         <motion.div 
           className="absolute inset-0 flex items-center justify-center text-4xl"

@@ -67,7 +67,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           {/* <ThemeToggle /> */}
-          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+          <Button className="shimmer-gradient">
             İletişim
           </Button>
         </div>
@@ -120,7 +120,7 @@ export default function Header() {
                     {item.name}
                   </NavLink>
                 ))}
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 mt-2">
+                <Button className="w-full shimmer-gradient mt-2">
                   İletişim
                 </Button>
               </nav>

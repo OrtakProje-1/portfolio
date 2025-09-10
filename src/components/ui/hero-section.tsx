@@ -15,11 +15,13 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
+   
+     
       <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
       <div className="absolute inset-0 flex items-center justify-center -z-10">
         <div className="h-[40vh] w-[40vh] bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full blur-3xl opacity-20 animate-pulse" />
       </div>
-
+      
       {/* Hero content */}
       <div className="container mx-auto px-4 z-10">
         <motion.div 
@@ -28,8 +30,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="mb-6 inline-flex items-center rounded-full border border-gray-200 bg-black/5 px-3 py-1 text-sm backdrop-blur">
-            <span className="mr-2 animate-pulse rounded-full bg-green-600 h-2 w-2" />
+          <div className="mb-6 inline-flex items-center rounded-full border border-gray-200 bg-black/5 px-3 py-1 text-sm backdrop-blur ">
+            <span className="mr-2 animate-pulse rounded-full bg-green-700 h-2 w-2" />
             <span className="text-gray-600">
               Yazılım mühendisi & Teknoloji tutkunu
             </span>

@@ -1,26 +1,26 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import { blogPosts } from '@/data/blog-posts';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import BlogCard from '@/components/ui/blog-card';
-import { ChevronLeft, Clock, Calendar, Share2, Bookmark, ThumbsUp, MessageSquare, Facebook, Twitter, Linkedin, Copy } from 'lucide-react';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import { blogPosts } from '@/data/blog-posts';
+import { motion } from 'framer-motion';
+import { Bookmark, Calendar, ChevronLeft, Clock, Copy, Facebook, Linkedin, MessageSquare, Share2, ThumbsUp, Twitter } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
 
 export default function BlogPostPage() {
@@ -150,17 +150,17 @@ export default function BlogPostPage() {
                         <Share2 className="h-5 w-5" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="bg-zinc-900 border-gray-800">
-                      <DropdownMenuItem onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}>
+                    <DropdownMenuContent align="end" className="bg-white/10 border-black/20 shadow-lg backdrop-blur-sm ">
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}>
                         <Facebook className="mr-2 h-4 w-4" /> Facebook
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank')}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank')}>
                         <Twitter className="mr-2 h-4 w-4" /> Twitter
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}>
                         <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={copyLinkToClipboard}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={copyLinkToClipboard}>
                         <Copy className="mr-2 h-4 w-4" /> Linki Kopyala
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -188,10 +188,12 @@ export default function BlogPostPage() {
               
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarFallback className="bg-gradient-to-br from-blue-600 to-indigo-600">MS</AvatarFallback>
+                  <AvatarFallback>
+                    <img src="/me.jpeg" alt="logo" className="w-full h-full object-cover rounded-full" />
+                  </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-medium">Mehmet Yazılımcı</p>
+                  <p className="font-medium">Hasan UÇKUN</p>
                   <p className="text-xs text-muted-foreground">Kıdemli Yazılım Mühendisi</p>
                 </div>
               </div>
@@ -199,7 +201,7 @@ export default function BlogPostPage() {
 
             {/* Featured Image */}
             <motion.div variants={itemVariants} className="mb-10">
-              <div className="w-full aspect-video rounded-xl overflow-hidden bg-gradient-to-r from-blue-600/30 to-indigo-600/30">
+              <div className="w-full aspect-video bg-fixed rounded-xl overflow-hidden bg-gradient-to-r from-blue-600/30 to-indigo-600/30">
                 <div className="w-full h-full flex items-center justify-center">
                   <span className="text-5xl">🚀</span>
                 </div>
@@ -294,13 +296,13 @@ export default function BlogPostPage() {
 
             {/* Author Bio */}
             <motion.div variants={itemVariants} className="my-12">
-              <div className="p-6 bg-black/30 border border-gray-800 rounded-xl">
+              <div className="p-6 bg-white  border border-gray-200 rounded-xl">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-2xl font-bold">
-                    MS
+                  <div className="w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center text-2xl font-bold">
+                    <img src="/me.jpeg" alt="logo" className="w-full h-full object-cover rounded-r-md" />
                   </div>
                   <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-xl font-bold mb-2">Mehmet Yazılımcı</h3>
+                    <h3 className="text-xl font-bold mb-2">Hasan UÇKUN</h3>
                     <p className="text-muted-foreground mb-4">
                       Kıdemli yazılım mühendisi olarak 10+ yıllık deneyime sahibim. Modern web teknolojileri, 
                       mikroservis mimarileri ve bulut çözümleri üzerine uzmanlaşmış durumdayım. 
@@ -348,7 +350,7 @@ export default function BlogPostPage() {
                 <AnimatedGradientText>Yorumlar</AnimatedGradientText>
               </h2>
 
-              <div className="bg-black/30 border border-gray-800 rounded-xl p-6">
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
                 <p className="text-center text-muted-foreground">
                   Yorumlar yakında aktif olacak. Bu yazı hakkındaki düşüncelerini paylaşmak için Twitter veya LinkedIn üzerinden bana ulaşabilirsin.
                 </p>

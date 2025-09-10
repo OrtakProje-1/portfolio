@@ -35,7 +35,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold mb-4 md:mb-0">
               <AnimatedGradientText>Öne Çıkan Projeler</AnimatedGradientText>
             </h2>
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild  className="animate-bounce-x animate-duration-slow">
               <Link to="/projects" className="group">
                 Tüm Projeleri Gör
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -69,7 +69,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold mb-4 md:mb-0">
               <AnimatedGradientText>Son Blog Yazıları</AnimatedGradientText>
             </h2>
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild className="animate-bounce-x animate-duration-slow">
               <Link to="/blog" className="group">
                 Tüm Yazıları Gör
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -110,9 +110,9 @@ export default function HomePage() {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+              className="shimmer-gradient pr-4 pl-4 py-2"
             >
-              <a href="mailto:contact@devportal.com">E-posta Gönder</a>
+              <a href="mailto:hasanuk98@gmail.com">E-posta Gönder</a>
             </Button>
           </div>
         </div>

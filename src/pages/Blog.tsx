@@ -171,13 +171,13 @@ export default function BlogPage() {
                     <p className="text-gray-200 mb-6 line-clamp-2">
                       {blogPosts[0].excerpt}
                     </p>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 ">
                       <div className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 mr-3 flex items-center justify-center text-lg font-bold">
-                          MS
+                        <div className="w-10 h-10 rounded-full mr-3 flex items-center justify-center text-lg font-bold">
+                          <img src="/me.jpeg" alt="logo" className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div>
-                          <p className="font-medium text-white">Mehmet Yazılımcı</p>
+                          <p className="font-medium text-white">Hasan UÇKUN</p>
                           <p className="text-xs text-gray-300">{blogPosts[0].date} · {blogPosts[0].readTime} okuma</p>
                         </div>
                       </div>
@@ -219,7 +219,7 @@ export default function BlogPage() {
 
             {/* Newsletter */}
             <motion.div variants={itemVariants} className="mt-20">
-              <div className="bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8 md:p-10">
+              <div className="bg-white border border-gray-200 rounded-xl p-8 md:p-10">
                 <div className="text-center max-w-2xl mx-auto">
                   <h3 className="text-2xl font-bold mb-4">Blog Yazılarımı Takip Et</h3>
                   <p className="text-muted-foreground mb-6">

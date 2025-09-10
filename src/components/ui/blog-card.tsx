@@ -24,7 +24,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   const { id, title, excerpt, date, readTime, category } = post;
   
   return (
-    <Card className="h-full overflow-hidden bg-transparent backdrop-blur-md border-gray-200 shadow-md shadow-grey-500/10 hover:shadow-blue-500/0 hover:text-primary hover:border-primary hover:bg-blue-400/10 transition-all duration-300">
+    <Card className="h-full overflow-hidden fade-in bg-transparent backdrop-blur-md border-gray-200 shadow-md shadow-grey-500/10 hover:shadow-blue-500/0 hover:text-primary hover:border-primary hover:bg-blue-400/10 transition-all duration-300">
       <Link to={`/blog/${id}`} className="flex flex-col h-full">
         <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-600/20 to-indigo-600/20">
           <div className="absolute inset-0 flex items-center justify-center">

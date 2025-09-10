@@ -18,15 +18,12 @@ const App = () => (
       <div className="relative min-h-screen">
         {/* Arka plan çizgileri */}
         <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          <line x1="10%" y1="0" x2="10%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
+          <line x1="0" y1="0" x2="0" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
           <line x1="20%" y1="0" x2="20%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
-          <line x1="30%" y1="0" x2="30%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
           <line x1="40%" y1="0" x2="40%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
-          <line x1="50%" y1="0" x2="50%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
           <line x1="60%" y1="0" x2="60%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
-          <line x1="70%" y1="0" x2="70%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
           <line x1="80%" y1="0" x2="80%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
-          <line x1="90%" y1="0" x2="90%" y2="100%" stroke="currentColor" strokeWidth=".5" className="text-gray-200 dark:text-gray-400" />
+         
         </svg>
         {/* Tüm içerik burada */}
         <div className="relative z-10">

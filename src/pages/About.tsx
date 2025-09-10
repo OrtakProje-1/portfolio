@@ -58,11 +58,18 @@ export default function AboutPage() {
             >
               <div className="md:col-span-1">
                 <div className="sticky top-24">
-                  <div className="mb-8 w-full md:w-64 aspect-square rounded-2xl overflow-hidden relative bg-gradient-to-br from-blue-600 to-indigo-600">
-                    <div className="absolute inset-1 rounded-xl bg-background/95 backdrop-blur flex items-center justify-center">
-                      <span className="text-8xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                        MS
-                      </span>
+                  <div
+                    className="absolute -top-2 -left-2 w-8 h-8 z-2 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 animate-bounce animate-duration-slow animate-delay-1000"
+                    
+                  />
+                  <div className="mb-8 w-full md:w-64 aspect-square rounded-2xl overflow-hidden relative">
+                    <div className="absolute inset-1 rounded-xl  backdrop-blur flex items-center justify-center">
+                      <img
+                        src="/me.jpeg"
+                        alt="logo"
+                        className="w-full h-full object-cover rounded-xl z-10"
+                      />
+                      {/* Renkli hareketli kareler */}
                     </div>
                   </div>
 
@@ -86,7 +93,7 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <Button className="w-full mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                  <Button className="w-full mb-4 shimmer-gradient py-2 px-10">
                     <a
                       href="/files/cv.pdf"
                       download
@@ -104,9 +111,7 @@ export default function AboutPage() {
                   className="prose prose-invert max-w-none"
                 >
                   <h2 className="text-2xl font-bold mb-4 flex items-center">
-                    <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                      Hikayem
-                    </span>
+                    <span className="shimmer-gradient-text">Hikayem</span>
                   </h2>
                   <p>
                     Yazılım dünyasına ilk adımımı lisede attım ve o zamandan
@@ -278,7 +283,7 @@ export default function AboutPage() {
                           <CardContent className="p-4 text-center">
                             <h4 className="font-semibold mb-2">Frontend</h4>
                             <div className="flex flex-wrap gap-1 justify-center">
-                              <Badge className="bg-mint-500">React</Badge>
+                              <Badge className="bg-blue-600">React</Badge>
                               <Badge className="bg-blue-600">TypeScript</Badge>
                               <Badge className="bg-blue-600">Next.js</Badge>
                               <Badge className="bg-blue-600">Tailwind</Badge>
@@ -359,7 +364,7 @@ export default function AboutPage() {
                 <motion.div variants={itemVariants}>
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <Award className="mr-2 h-6 w-6 text-primary" />
-                    <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    <span className="shimmer-gradient-text">
                       Ödüller & Sertifikalar
                     </span>
                   </h2>
