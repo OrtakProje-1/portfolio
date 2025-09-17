@@ -28,6 +28,20 @@ export default function BlogPostPage() {
   const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
   const [post, setPost] = useState<typeof blogPosts[0] | null>(null);
+
+  // Güvenli sosyal medya paylaşım fonksiyonu
+  const shareToSocial = (platform: string) => {
+    const url = encodeURIComponent(window.location.href);
+    const safeUrls = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      twitter: `https://twitter.com/intent/tweet?url=${url}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+    };
+    
+    if (safeUrls[platform as keyof typeof safeUrls]) {
+      window.open(safeUrls[platform as keyof typeof safeUrls], '_blank', 'noopener,noreferrer');
+    }
+  };
   const [relatedPosts, setRelatedPosts] = useState<typeof blogPosts>([]);
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
@@ -142,7 +156,6 @@ export default function BlogPostPage() {
                     <span>{post.readTime} okuma</span>
                   </div>
                 </div>
-                
                 <div className="flex items-center gap-2">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -150,14 +163,15 @@ export default function BlogPostPage() {
                         <Share2 className="h-5 w-5" />
                       </Button>
                     </DropdownMenuTrigger>
+                    
                     <DropdownMenuContent align="end" className="bg-white/10 border-black/20 shadow-lg backdrop-blur-sm ">
-                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => shareToSocial('facebook')}>
                         <Facebook className="mr-2 h-4 w-4" /> Facebook
                       </DropdownMenuItem>
-                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank')}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => shareToSocial('twitter')}>
                         <Twitter className="mr-2 h-4 w-4" /> Twitter
                       </DropdownMenuItem>
-                      <DropdownMenuItem className='hover:bg-white' onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}>
+                      <DropdownMenuItem className='hover:bg-white' onClick={() => shareToSocial('linkedin')}>
                         <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                       </DropdownMenuItem>
                       <DropdownMenuItem className='hover:bg-white' onClick={copyLinkToClipboard}>

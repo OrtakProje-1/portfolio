@@ -65,26 +65,26 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
-  })
-  .join('\n')}
-}
-`
-          )
-          .join('\n'),
-      }}
-    />
-  );
+  // Güvenli CSS string oluşturma
+  const generateSafeStyles = () => {
+    return Object.entries(THEMES)
+      .map(([theme, prefix]) => {
+        const themeStyles = colorConfig
+          .map(([key, itemConfig]) => {
+            const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
+            return color ? `  --color-${key}: ${color};` : null;
+          })
+          .filter(Boolean)
+          .join('\n');
+        
+        return `${prefix} [data-chart=${id}] {\n${themeStyles}\n}`;
+      })
+      .join('\n');
+  };
+
+  const styles = generateSafeStyles();
+
+  return <style>{styles}</style>;
 };
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
@@ -278,4 +278,5 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
   return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config];
 }
 
-export { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartStyle };
+export { ChartContainer, ChartLegend, ChartLegendContent, ChartStyle, ChartTooltip, ChartTooltipContent };
+

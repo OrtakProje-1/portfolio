@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
+import { SecurityHeaders } from "../SecurityHeaders";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -10,7 +11,7 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-   
+      <SecurityHeaders />
       <Header />
       <motion.main
         initial={{ opacity: 0 }}

@@ -1,6 +1,17 @@
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 export default function NotFoundPage() {
+  const navigate = useNavigate();
+
+  // Güvenli geri gitme fonksiyonu
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 p-6 text-center">
       <div className="space-y-6 max-w-md">
@@ -14,7 +25,7 @@ export default function NotFoundPage() {
           <Button asChild>
             <a href="/">Return Home</a>
           </Button>
-          <Button variant="outline" onClick={() => window.history.back()}>
+          <Button variant="outline" onClick={goBack}>
             Go Back
           </Button>
         </div>

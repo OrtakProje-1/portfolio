@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -12,8 +13,9 @@ import Projects from "./pages/Projects";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
       {/* Tüm uygulama için arka plan kapsayıcısı */}
       <div className="relative min-h-screen">
         {/* Arka plan çizgileri */}
@@ -40,8 +42,9 @@ const App = () => (
           </BrowserRouter>
         </div>
       </div>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
