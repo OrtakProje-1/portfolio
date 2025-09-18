@@ -34,8 +34,8 @@ export const SecurityHeaders = ({
       <meta name="twitter:description" content={description} />
       
       {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="apple-touch-icon" href="/logo.png" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </Helmet>
   );
 };
