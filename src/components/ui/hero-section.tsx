@@ -92,10 +92,18 @@ export default function HeroSection() {
             transition={{ delay: 1.2, duration: 1 }}
             className="mt-10 flex flex-wrap gap-4 justify-center"
           >
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+              asChild
+            >
               <a href="/projects">Projelerim</a>
             </Button>
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              asChild
+            >
               <a href="/about">Hakkımda</a>
             </Button>
           </motion.div>
@@ -111,6 +119,7 @@ export default function HeroSection() {
               size="icon" 
               className="rounded-full" 
               onClick={scrollToContent}
+              aria-label="Aşağı kaydır"
             >
               <ArrowDown className="h-6 w-6" />
             </Button>

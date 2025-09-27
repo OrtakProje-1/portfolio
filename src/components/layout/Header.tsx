@@ -1,17 +1,17 @@
-import { Button } from '@/components/ui/button';
-import ThemeToggle from '@/components/ui/theme-toggle';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/lib/utils';
-import { HamburgerMenu, Menu } from "iconsax-reactjs";
-import { X } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/theme-toggle";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
+import { Menu } from "iconsax-reactjs";
+import { X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: 'Ana Sayfa', href: '/' },
-  { name: 'Hakkımda', href: '/about' },
-  { name: 'Projeler', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
+  { name: "Ana Sayfa", href: "/" },
+  { name: "Hakkımda", href: "/about" },
+  { name: "Projeler", href: "/projects" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
@@ -24,27 +24,26 @@ export default function Header() {
       setScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={cn(
-        'fixed top-0 w-full z-40 transition-all duration-200',
-        scrolled
-          ? 'bg-black/0 backdrop-blur-lg'
-          : 'bg-transparent'
+        "fixed top-0 w-full z-40 transition-all duration-200",
+        mobileMenuOpen
+          ? "bg-background"
+          : scrolled
+          ? isMobile
+            ? "bg-background"
+            : "bg-black/0 backdrop-blur-lg"
+          : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-     
-        <Link
-          to="/"
-          className=""
-        >
-            <div className="custom-gradient-image"/>
-          
+        <Link to="/" className="" aria-label="Ana sayfaya git - Hasan Uçkun">
+          <div className="custom-gradient-image" />
         </Link>
 
         {/* Desktop navigation */}
@@ -55,8 +54,8 @@ export default function Header() {
               to={item.href}
               className={({ isActive }) =>
                 cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  isActive ? 'text-primary' : 'text-foreground'
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  isActive ? "text-primary" : "text-foreground"
                 )
               }
             >
@@ -66,35 +65,26 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          {/* <ThemeToggle /> */}
-          <Button className="shimmer-gradient">
-            İletişim
-          </Button>
+          <ThemeToggle />
+          <Button className="shimmer-gradient">İletişim</Button>
         </div>
 
         {/* Mobile navigation */}
         {isMobile && (
           <div className="flex items-center md:hidden gap-2">
             <ThemeToggle />
-            <HamburgerMenu size="24" className="text-primary" variant="Bold" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </HamburgerMenu>
-            {/* <Button
+            <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={mobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
               ) : (
                 <Menu className="h-6 w-6" />
               )}
-            </Button> */}
+            </Button>
           </div>
         )}
       </div>
@@ -102,7 +92,7 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden">
-          <div className="bg-black/15 backdrop-blur-lg border-b border-gray-300 m-2 rounded-sm">
+          <div className="bg-background backdrop-blur-lg border-b border-gray-300 m-2 rounded-sm">
             <div className="container mx-auto px-4 pt-2 pb-4">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
@@ -111,8 +101,10 @@ export default function Header() {
                     to={item.href}
                     className={({ isActive }) =>
                       cn(
-                        'font-medium transition-colors p-2 rounded-md hover:bg-black/40',
-                        isActive ? 'text-primary bg-black/30' : 'text-foreground'
+                        "font-medium transition-colors p-2 rounded-md hover:bg-black/40",
+                        isActive
+                          ? "text-foreground"
+                          : "text-foreground/40"
                       )
                     }
                     onClick={() => setMobileMenuOpen(false)}

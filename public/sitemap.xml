@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana sayfa -->
+  <url>
+    <loc>https://hasanuckun.com.tr/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Hakkımda sayfası -->
+  <url>
+    <loc>https://hasanuckun.com.tr/about</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projeler sayfası -->
+  <url>
+    <loc>https://hasanuckun.com.tr/projects</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog ana sayfası -->
+  <url>
+    <loc>https://hasanuckun.com.tr/blog</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog yazıları -->
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/1</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/2</loc>
+    <lastmod>2023-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/3</loc>
+    <lastmod>2023-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/4</loc>
+    <lastmod>2023-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/5</loc>
+    <lastmod>2023-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/6</loc>
+    <lastmod>2023-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/7</loc>
+    <lastmod>2023-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/8</loc>
+    <lastmod>2023-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hasanuckun.com.tr/blog/9</loc>
+    <lastmod>2023-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

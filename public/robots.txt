@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://hasanuckun.com.tr/sitemap.xml

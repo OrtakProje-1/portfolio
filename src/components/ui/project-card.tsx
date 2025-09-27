@@ -53,7 +53,12 @@ export default function ProjectCard({ project, showTags = false }: ProjectCardPr
         
         <div className="flex items-center gap-2 mt-auto">
           {demoUrl && (
-            <Button variant="outline" size="sm" className="gap-1.5">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="gap-1.5"
+              asChild
+            >
               <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <Eye className="h-4 w-4 mr-1" />
                 Demo
@@ -62,7 +67,12 @@ export default function ProjectCard({ project, showTags = false }: ProjectCardPr
           )}
           
           {githubUrl && (
-            <Button variant="outline" size="sm" className="gap-1.5">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="gap-1.5"
+              asChild
+            >
               <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <Github className="h-4 w-4 mr-1" />
                 Kod
@@ -70,7 +80,12 @@ export default function ProjectCard({ project, showTags = false }: ProjectCardPr
             </Button>
           )}
           
-          <Button variant="ghost" size="icon" className="ml-auto">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="ml-auto"
+            aria-label={`${title} projesi hakkında daha fazla bilgi`}
+          >
             <ExternalLink className="h-4 w-4" />
           </Button>
         </div>
